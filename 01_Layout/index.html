@@ -56,12 +56,24 @@
         const navbar = document.querySelector(".navbar");
         const toggle = document.querySelector(".navbar-toggle");
         const menu = document.querySelector(".navbar-menu");
+        const navlinks=document.querySelectorAll(".navbar-menu a");
 
         toggle.addEventListener("click", () => {
             toggle.classList.toggle("active");
             menu.classList.toggle("active");
             navbar.classList.toggle("active");
         });
+        function removelinks(){
+          toggle.classList.remove("active");
+            menu.classList.remove("active");
+            navbar.classList.remove("active");
+        }
+        navlinks.forEach((link)=>{
+          link.addEventListener("click",(event)=>{
+            event.preventDefault();
+             removelinks();
+          })
+        })
     </script>
   </body>
 </html>
