@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(
+    circle at 60% -120%,
+    rgb(255, 255, 255) 10%,
+    #010101 3%,
+    rgb(97, 97, 97) 10%,
+    #010101 60%
+  );
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: #010101;
+  z-index: 5;
+  pointer-events: none;
+  animation: appear1 1.2s ease forwards;
+}
+
+.navbar,
+.main-container {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  min-height: 10vh;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: clamp(0.5rem, 1rem, 2rem) clamp(0.2rem, 5rem, 10rem)
+    clamp(0.5rem, 1rem, 2rem) clamp(0.5rem, 4rem, 8rem);
+}
+
+.navbar .logo {
+  background: transparent;
+  width: 180px;
+  height: 60px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.navbar i {
+  display: none;
+}
+
+.navbar .logo img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.navbar .navbar-menu {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 2rem, 3rem);
+}
+.navbar .navbar-menu li a {
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.navbar .navbar-menu li a:hover {
+  color: #ed1d24;
+}
+@keyframes appear1 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -10;
+  }
+}
+
+@keyframes appearimage {
+  to {
+    opacity: 1;
+  }
+}
+.main-container {
+  height: calc(100vh - 10vh);
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5rem 4rem;
+  position: relative;
+}
+.main-container .main-content {
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.main-content h1 {
+  font-family: monospace;
+  font-size: 6rem;
+  letter-spacing: 2px;
+}
+.main-content h1 span {
+  font-size: 2rem;
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+.main-content p {
+  font-size: 0.8rem;
+  margin: 1rem 0;
+  padding: 1rem clamp(1rem, 8rem, 10rem) 1rem 0;
+}
+.main-content .btn {
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.8em;
+  background-color: #ed1d24;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.main-content .btn i {
+  transition: all 0.6s ease;
+  font-size: 1.2em;
+  background: transparent;
+}
+.main-content .btn:hover {
+  color: #ed1d24;
+  background-color: white;
+}
+.main-content .btn:hover i {
+  color: #ed1d24;
+}
+.main-content .icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+.main-content .icons i {
+  border: 1px solid #ed1d24;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.main-content .icons i:hover {
+  color: #ed1d24;
+  background-color: white;
+  border-color: transparent;
+}
+.main-container .image {
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  animation: appearimage 1s 1 ease forwards;
+}
+.main-container .image img {
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 810px) {
+  .navbar {
+    flex-direction: column;
+    background: #ed1d24;
+    padding: 1rem 1rem;
+  }
+  .navbar .logo {
+    height: 50px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .navbar i {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .navbar .navbar-menu {
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  .navbar .navbar-menu.active {
+    display: flex;
+  }
+  .navbar .navbar-menu li a:hover {
+    text-decoration: underline;
+    color: white;
+  }
+  .main-container {
+    height: calc(100vh - 10vh);
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  .main-container .main-content {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .main-content h1 {
+    font-family: monospace;
+    font-size: 5rem;
+    letter-spacing: 2px;
+  }
+  .main-content h1 span {
+    font-size: 1.5rem;
+    font-family: monospace;
+    letter-spacing: 2px;
+  }
+  .main-content p {
+    font-size: 0.8rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    line-height: 25px;
+  }
+  .main-content .btn {
+    margin: 2rem 0;
+  }
+  .main-container .image {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    opacity: 0.5;
+    animation: none;
+  }
+}
