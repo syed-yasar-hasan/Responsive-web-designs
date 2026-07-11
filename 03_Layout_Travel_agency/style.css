@@ -1,162 +1,382 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:"Poppins" ,sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-:root{
-    --primary-color:#ff833e;
-    --primary-color-dark:#db6f35 ;
-    --text-color-dark:#333333;
-    --text-light:#767268;
-    --white:#ffffff;
-    --max-width:1200px;
+:root {
+  --primary-color: #ff833e;
+  --primary-color-dark: #db6f35;
+  --text-color-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px;
 }
-button{
-    border: none;
-    padding: 0.8rem 1.3rem;
-    border-radius: 5px;
-    font-weight: 600;
-    color:var(--text-color-dark);
+button {
+  border: none;
+  padding: 0.8rem 1.3rem;
+  border-radius: 5px;
+  font-weight: 600;
+  color: var(--text-color-dark);
 }
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-a{
-    text-decoration: none;
-    color: var(--text-color-dark);
+a {
+  text-decoration: none;
+  color: var(--text-color-dark);
 }
 
-.navbar{
-    max-width: var(--max-width);
-    width: 100%;
-    min-height: 10vh;
-    margin: auto;
-    display: flex;
-    justify-content:space-between;
-    padding: 1rem 1.5rem;
-    align-items: center;
-    white-space: nowrap;
+.navbar {
+  max-width: var(--max-width);
+  width: 100%;
+  min-height: 10vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  white-space: nowrap;
 }
-.navbar .nav-responsive-container{
-    display: flex;
-    justify-content:center;
-    gap:1.5rem;
-    align-items: center;
+.navbar .nav-responsive-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  align-items: center;
 }
-.navbar .logo{
-    font-size: clamp(2rem,3vw,4rem);
-    font-family:'Bebas neue',sans-serif;
-    font-weight: 500;
-    display: flex;
-    justify-content:center;
-    align-items:flex-end;
+.navbar .logo {
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-family: "Bebas neue", sans-serif;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: var(--text-color-dark);
 }
-.navbar .logo span{
-    font-weight: 600;
-    font-size: clamp(0.8rem,1vw,1.5rem);
-    display: inline-block;
-    color: var(--primary-color-dark);
+.navbar .logo span {
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+  display: inline-block;
+  color: var(--primary-color-dark);
 }
-.navbar .logo svg{
-    position: relative;
-    right: 8px;
-    bottom: 8px;
+.navbar .logo svg {
+  position: relative;
+  right: 8px;
+  bottom: 8px;
 }
-.navbar .nav-responsive-container .menu-icon{
-    display: none;
+.navbar .nav-responsive-container .menu-icon {
+  display: none;
 }
-.navbar .navbar-menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar .navbar-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.navbar-menu li a {
+  font-weight: 500;
+  font-size: clamp(0.5rem, 1.1rem, 1.5rem);
+  transition: all 0.5s ease;
+  padding-bottom: 2px;
+  border-color: transparent;
+  border-radius: 5px;
+}
+.navbar-menu li a:hover {
+  border-bottom: 3px solid var(--primary-color-dark);
+}
+
+.navbar .btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar .btns button {
+  background: transparent;
+  font-size: clamp(0.8rem, 1.1vw, 1.2rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar .btns .sign-up:hover {
+  color: var(--primary-color-dark);
+}
+.navbar .btns .sign-in {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+.navbar .btns .sign-in:hover {
+  background-color: var(--primary-color-dark);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
     gap: 2rem;
-}
-.navbar-menu li a{
-    font-weight: 500;
-    font-size: clamp(0.5rem,1.1rem,1.5rem);
-    transition: all 0.5s ease;
-    padding-bottom: 2px;
-    border-color: transparent;
-    border-radius: 5px;
-}
-.navbar-menu li a:hover{
-        border-bottom: 3px solid var(--primary-color-dark);
+    background-color: var(--primary-color);
+  }
+  .navbar .navbar-menu {
+    flex-direction: column;
+    display: none;
+  }
+  .navbar .btns button {
+    padding: 10px 15px;
+  }
+  .navbar .nav-responsive-container {
+    gap: 0.8rem;
+  }
+  .navbar .nav-responsive-container .logo span {
+    color: var(--white);
+  }
+  .navbar .nav-responsive-container .menu-icon {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--white);
+  }
+  .navbar .nav-responsive-container .btns .sign-up {
+    color: var(--white);
+  }
+  .nav-responsive-container .btns .sign-in {
+    color: var(--primary-color);
+    background-color: var(--white);
+  }
+  .nav-responsive-container .btns .sign-in:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: var(--white);
+  }
+  .navbar .navbar-menu li a {
+    color: var(--white);
+  }
+  .navbar .navbar-menu li a:hover {
+    border-color: var(--text-color-dark);
+  }
+  .navbar .navbar-menu.active {
+    display: flex;
+  }
 }
 
-.navbar .btns{
+main {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+}
+footer {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+  padding: 0 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.main-container .main-content {
+  height: inherit;
+  width: 50vw;
+}
+.main-container .main-image {
+  background: url(header-bg.png) no-repeat center center / cover;
+  border-radius: 50%;
+  width: clamp(260px, 40vw, 500px);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: visible;
+}
+.main-container .main-image img {
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  width: clamp(800px, 92vw, 680px);
+  max-width: none;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-55%, -50%);
+}
+
+.main-container .main-image .tag {
+  font-size: clamp(1.1rem, 1.2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text-color-dark);
+  position: absolute;
+  border-radius: 5px;
+  padding: 1rem 1.3rem;
+  background-color: var(--white);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.main-image .tag i {
+  color: var(--primary-color-dark);
+}
+.main-image .tag1 {
+  top: 20px;
+  left: -50px;
+}
+.main-image .tag2 {
+  top: 10px;
+  right: -20px;
+}
+.main-image .tag3 {
+  bottom: 50px;
+  left: 0;
+}
+.main-image .tag4 {
+  bottom: 50px;
+  right: 10px;
+}
+.main-container .main-content h1 {
+  font-family: "Bebas neue", sans-serif;
+  font-size: clamp(4rem, 5vw, 6rem);
+  color: var(--text-color-dark);
+  line-height: 4.5rem;
+}
+.main-container .main-content > p {
+  color: var(--text-light);
+  padding: 1.3rem 6rem 2rem 0;
+}
+.main-container .main-content .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  width: min(100%, 600px);
+  max-width: 100%;
+  border-radius: 10px;
+}
+.main-content .card > div {
+  flex: 1 1 180px;
+  min-width: 0;
+}
+.main-content .card h4 {
+  color: var(--text-light);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.main-content .card i {
+  color: var(--primary-color);
+  font-weight: 900;
+}
+.main-content .card p {
+  color: var(--text-color-dark);
+  font-weight: 600;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.main-content .card .btn {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+.main-content .card .btn button {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  padding: 0.8rem 1.6rem;
+  color: var(--white);
+  cursor: pointer;
+}
+.main-content .card .btn button:hover {
+  background-color: var(--primary-color-dark);
+}
+.main-content h1 span {
+  font-family: "Bebas neue", sans-serif;
+  color: var(--primary-color);
+}
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    padding: 0;
+  }
+  .main-container .main-image {
+    width: clamp(220px, 45vw, 350px);
+    order: -1;
+    margin: 3rem 0;
+  }
+  .main-container .main-image img {
+    width: clamp(400px, 80vw, 660px);
+    transform: translate(-50%, -50%);
+  }
+  .main-container .main-image .tag {
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+    padding: 0.8rem 1rem;
+    background-color: var(--white);
+  }
+  .main-image .tag1 {
+    top: 20px;
+    left: -100px;
+  }
+  .main-image .tag2 {
+    top: 10px;
+    right: -100px;
+  }
+  .main-image .tag3 {
+    bottom: 0px;
+    left: -60px;
+  }
+  .main-image .tag4 {
+    bottom: 0px;
+    right: -50px;
+  }
+  .main-container .main-content {
+    width: 100%;
+  }
+  .main-container .main-content .card {
+    width: 90%;
+    margin: auto;
+    max-width: 100%;
+    gap: 1rem;
+    white-space: nowrap;
+    padding: 1rem;
+    justify-content: center;
+  }
+  .main-container .main-content h1 {
+    line-height: 5rem;
+    text-align: center;
+  }
+  .main-container .main-content p {
+    margin-left: 6rem;
+  }
+  .main-content .card .dest,
+  .main-content .card .date {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:1rem;
-}
-.navbar .btns button{
-    background:transparent;
-    font-size:clamp(0.8rem,1.1vw,1.2rem);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.navbar .btns .sign-up:hover{
-    color: var(--primary-color-dark);
-}
-.navbar .btns .sign-in{
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-.navbar .btns .sign-in:hover{
-    background-color: var(--primary-color-dark);
-}
-
-@media (max-width:768px){
-    .navbar{
-        flex-direction: column;
-        gap:2rem;
-        background-color: var(--primary-color);
-    }
-    .navbar .navbar-menu{
-        flex-direction: column;
-        display: none;
-    }
-    .navbar .btns button{
-        padding: 10px 15px;
-    }
-    .navbar .nav-responsive-container{
-        gap: 0.8rem;
-    }
-    .navbar .nav-responsive-container .logo span{
-        color: var(--white);
-    }
-    .navbar .nav-responsive-container .menu-icon{
-        display: flex;
-        font-size: 1.5rem;
-        font-weight: 900;
-        color: var(--white);
-    }
-    .navbar .nav-responsive-container .btns .sign-up{
-        color: var(--white);
-    }
-    .nav-responsive-container .btns .sign-in{
-        color: var(--primary-color);
-        background-color: var(--white);
-    }
-    .nav-responsive-container .btns .sign-in:hover{
-        background-color:rgba(255, 255, 255, 0.3);
-        color: var(--white);
-    }
-    .navbar .navbar-menu li a {
-        color: var(--white);
-    }
-    .navbar .navbar-menu li a:hover {
-        border-color: var(--text-color-dark);
-    }
-    .navbar .navbar-menu.active {
-        display: flex;
-    } 
+    position: relative;
+    right: 3rem;
+  }
+  .main-content .card .dest h4 {
+    position: relative;
+    left: 1.5rem;
+  }
+  .main-content .card p {
+    white-space: nowrap;
+  }
+  .main-content .card .btn {
+    width: 100%;
+    margin-left: 0;
+  }
+  .main-content .card .btn button {
+    width: 100%;
+  }
+  footer {
+    margin-top: 3rem;
+    text-align: center;
+  }
 }
