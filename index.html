@@ -1,12 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Responsive Websites</title>
-</head>
-<body>
-    <a href="01_Layout/index.html">Yoga Website</a>
-    <a href="02_layout_marvel_homePage_SpiderMan/index.html">Yoga Website</a>
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="top"></div>
+    <a href="#top">
+      <button class="back-to-top"><i class="ri-arrow-up-fill"></i></button
+    ></a>
+    <header>
+      <div class="my-header">
+        <div class="badge">Project Hub</div>
+        <h1>Responsive Web designs</h1>
+        <p>
+          A curated collection of modern , responsive websites built completely
+          from scratch using HTML , CSS & a bit of JavaScript.
+        </p>
+      </div>
+    </header>
+    <div class="theme-switcher">
+      <button class="theme-icon">
+        <i class="ri-sun-fill sun-icon"></i>
+        <i class="ri-moon-fill moon-icon"></i>
+      </button>
+    </div>
+
+    <main>
+      <section class="grid-container">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/website-1-pic.png" alt="project-1" />
+          </div>
+          <div class="project-content">
+            <h3>Yoga HomePage</h3>
+            <p>
+              A clean and responsive yoga landing page with call-to-action
+              button, and a mobile menu toggle that reveals navigation links
+            </p>
+            <a href="01_Layout/index.html" target="_blank"
+              >View Live Project <span>&rarr;</span></a
+            >
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/website-2-pic.png" alt="project-1" />
+          </div>
+          <div class="project-content">
+            <h3>Marvel SpiderMan</h3>
+            <p>
+              A dark, cinematic Spider-Man homepage featuring,an action-oriented
+              ticket CTA, social icons, and a responsive menu for smaller
+              screens.
+            </p>
+            <a
+              href="02_layout_marvel_homePage_SpiderMan/index.html"
+              target="_blank"
+              >View Live Project <span>&rarr;</span></a
+            >
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/website-3-pic.png" alt="project-1" />
+          </div>
+          <div class="project-content">
+            <h3>Travel Agency Homepage</h3>
+            <p>
+              A travel agency hero layout with a bright adventure theme,
+              destination/date booking card, floating service tags, and a modern
+              responsive navigation header.
+            </p>
+            <a href="03_Layout_Travel_agency/index.html" target="_blank"
+              >View Live Project <span>&rarr;</span></a
+            >
+          </div>
+        </article>
+      </section>
+    </main>
+    <script>
+      let htmlElement = document.documentElement;
+      let themeIcon = document.querySelector(".theme-switcher");
+      let currenTheme = localStorage.getItem("theme") || "dark";
+
+      themeIcon.addEventListener("click", () => {
+        let newTheme = htmlElement.dataset.theme === "dark" ? "light" : "dark";
+        htmlElement.dataset.theme = newTheme;
+        localStorage.setItem("theme", newTheme);
+      });
+
+
+      const backTotop=document.querySelector('.back-to-top');
+      window.addEventListener('scroll',()=>{
+        if(window.scrollY > 500){
+          backTotop.classList.add('reveal')
+        }else{
+          backTotop.classList.remove('reveal')
+        }
+      })
+      // backTotop.addEventListener('click',()=>{
+      //   window.scrollTo(
+      //     {
+      //       top:0,
+      //       behavior:"smooth";
+      //     }
+      //   )
+      // })
+
+
+    </script>
+  </body>
 </html>
